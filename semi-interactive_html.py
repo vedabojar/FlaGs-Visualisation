@@ -65,7 +65,7 @@ fig = make_subplots(shared_yaxes = True, shared_xaxes = True)
 
 # 2. Setting the axes. Since the output is a single graph, 
 #    the y-axis labels need to be set a specified
-data = pd.read_csv('./domains_main.tsv', sep='\t', header=None, skiprows=None)            
+data = pd.read_csv('./operon.tsv', sep='\t', header=None, skiprows=None)            
 df = pd.DataFrame(data)                                                                                
                                                                                                     
 y_axes = df[0].nunique()*40
@@ -85,7 +85,7 @@ genes = []
 
 
 # 4. Data file input
-main_file = open('dm_operon_short.tsv','r').read()
+main_file = open('operon.tsv','r').read()
 eg1 = main_file.split("\n\n\n\n")
 y_level_m = 0
 for m in eg1:
@@ -166,7 +166,7 @@ for m in eg1:
 
   
             # 6. Domains file input
-            with open ('dm_output.txt', 'r') as domain_file_org:     # opening domain file
+            with open ('domains.txt', 'r') as domain_file_org:     # opening domain file
                 domain_file = domain_file_org.readlines()[3:-10]     # skipping first 3 rows
                 for d in domain_file:
                     if d != '':
