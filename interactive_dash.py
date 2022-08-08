@@ -108,8 +108,8 @@ traceB_map = dict()
 accession_operons_List = []
 accession_domains_List = []
 
-# 4. Data file input
-main_file = open('dm_operon_short.tsv','r').read()
+# 4. Operon data file input
+main_file = open('operon.tsv','r').read()
 eg1 = main_file.split("\n\n\n\n")
 y_level_m = 0
 for m in eg1:
@@ -200,10 +200,10 @@ for m in eg1:
             scoreList = []
 
         
-            data_2 = pd.read_csv('./dm_output.txt', sep = "\s+|\t+|\s+\t+|\t+\s+", header = 1,  usecols=range(24), engine='python')      #NOTE! Table might be incomplete,       
+            data_2 = pd.read_csv('./domains.txt', sep = "\s+|\t+|\s+\t+|\t+\s+", header = 1,  usecols=range(24), engine='python')      #NOTE! Table might be incomplete,       
             df_2 = pd.DataFrame(data_2)       
 
-            with open ('dm_output.txt', 'r') as domain_file_org:     # opening domain file
+            with open ('domains.txt', 'r') as domain_file_org:     # opening domain file
                 domain_file = domain_file_org.readlines()[3:-10]     # skipping first 3 rows
                 for d in domain_file:
                     if d != '':
@@ -267,26 +267,7 @@ for m in eg1:
                                     fig1.add_trace(trace1B_list[-1][0], row = 1, col = 1)
     
                                 #print(accesssion_operons + "(" + id1 + ")" + " : " + id2)
-                                print(identifier)
-
-
-                        # # 6c. If a gene has additional information about domains (i.e. same id is found in second file), then these will also be drawn inside the arrow.
-                        # if id1 == id2:
-                        #     if domain_end != gene_end and domain_start != gene_start:
-                        #         xList_domain_line = [domain_start, domain_start, domain_end, domain_end, domain_start]
-                        #         yList_domain_line = [y_level_m-2, y_level_m+2, y_level_m+2, y_level_m-2, y_level_m-2]
-                        #         traceB_list.append((go.Scatter(x=xList_domain_line, y=yList_domain_line, fill="toself", hoverinfo = 'none', fillcolor=colorDict[dom1_name], line=dict(color=colorDict[dom1_name]), opacity = 0.5, mode='lines', name = id2), len(fig2.data)))     
-                        #         fig2.add_trace(traceB_list[-1][0], row = 1, col = 1)
-                        #     elif domain_end == gene_end and gene_direction == '-':
-                        #         xList_domain_line = [domain_start, domain_start, domain_end, domain_end, domain_start]
-                        #         yList_domain_line = [y_level_m-2, y_level_m+2, y_level_m+2, y_level_m-2, y_level_m-2]
-                        #         traceB_list.append((go.Scatter(x=xList_domain_line, y=yList_domain_line, fill="toself", hoverinfo = 'none', fillcolor=colorDict[dom1_name], line=dict(color=colorDict[dom1_name]), opacity = 0.5, mode='lines', name = id2), len(fig2.data)))
-                        #         fig2.add_trace(traceB_list[-1][0], row = 1, col = 1)
-                        #     elif domain_start == gene_start and gene_direction == '+':
-                        #         xList_domain_line = [domain_start, domain_start, domain_end, domain_end, domain_start]
-                        #         yList_domain_line = [y_level_m-2, y_level_m+2, y_level_m+2, y_level_m-2, y_level_m-2]
-                        #         traceB_list.append((go.Scatter(x=xList_domain_line, y=yList_domain_line, fill="toself", hoverinfo = 'none', fillcolor=colorDict[dom1_name], line=dict(color=colorDict[dom1_name]), opacity = 0.5, mode='lines', name = id2), len(fig2.data)))
-                        #         fig2.add_trace(traceB_list[-1][0], row = 1, col = 1)                                                  
+                                print(identifier)                                        
 
                                 # Group all fig.2 traces that have the same ID in column = 0  
                                 if id2 not in traceB_map.keys():
@@ -325,7 +306,7 @@ print(alignment_data)
 
 # 1. Protein file
 
-protein_file = pd.read_csv("./dm_operon_short.tsv", sep = "\t", header = None, engine='python')
+protein_file = pd.read_csv("./operon.tsv", sep = "\t", header = None, engine='python')
 
 protein_dict = {
     "accession": [], 
@@ -356,17 +337,17 @@ protein_df = pd.DataFrame(protein_dict)
 
 count = 0
 newFileStr = ""
-with open("dm_output.txt") as fp:
+with open("domain.txt") as fp:
     Lines = fp.readlines()
     for line in Lines:
         count += 1
         newFileStr += re.sub('[\t, +]+', ',', line)           # Crazy separators need relpacing
         
-text_file = open("dm_output.csv", "w")
+text_file = open("domains.csv", "w")
 n = text_file.write(newFileStr)
 text_file.close()
 
-domain_file = pd.read_csv('./dm_output.csv', usecols=range(24), header = 1, comment='#', engine='python')        # Even with replacement of sep, the last column
+domain_file = pd.read_csv('./domains.csv', usecols=range(24), header = 1, comment='#', engine='python')        # Even with replacement of sep, the last column
                                                                                                 # is read wrong, therefore columns up to 23 are read
 domain_dict = { 
     "accession": [], 
