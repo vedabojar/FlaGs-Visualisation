@@ -1,4 +1,4 @@
-# Visualisation of FlaGs Results
+# Visualization of FlaGs Results
 
 Complex programs can fail to deliver their results without an adequate visualization interface. FlaGs (Flanking Genes) is a bioinformatics tool that detects homologous gene clusters and outputs a graphical visualization along with a phylogenetic tree. Recent updates to the FlaGs algorithm has made this tool domain-aware, however it is lacking the visual interface to support such feature. 
 
