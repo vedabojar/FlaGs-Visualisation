@@ -63,7 +63,7 @@ fig, ax = plt.subplots(1, 2, sharey = 'row', gridspec_kw={'width_ratios': [5, 15
 
 
 # 3. Operon (main) file input 
-main_file = open('dm_operon_short.tsv','r').read()
+main_file = open('operon.tsv','r').read()
 eg1 = main_file.split("\n\n\n\n")
 y_level_m = 0
 for m in eg1:
