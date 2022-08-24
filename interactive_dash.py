@@ -292,14 +292,12 @@ for m in eg1:
 from Bio.Align.Applications import MafftCommandline
 in_file = "sequences.fasta"
 mafft_cline = MafftCommandline(input=in_file)
-print(mafft_cline)
 stdout, stderr = mafft_cline()
 with open("aligned.fasta", "w") as handle:
     handle.write(stdout)
 from Bio import AlignIO
 aligned = AlignIO.read("aligned.fasta", "fasta")
 alignment_data = open('aligned.fasta', 'r').read()
-print(alignment_data)
 #output.write(stdout) 
 
 # ------------------- DOMAIN GRAPH -------------------
@@ -337,7 +335,7 @@ protein_df = pd.DataFrame(protein_dict)
 
 count = 0
 newFileStr = ""
-with open("domain.txt") as fp:
+with open("domains.txt") as fp:
     Lines = fp.readlines()
     for line in Lines:
         count += 1
