@@ -28,12 +28,12 @@ Downloading the script with its corresponding file/s in a shared directory shoul
 
 Project aims:
 
-| Step  | Script | Run command | Comment |
+| Step  | Script | Run command | Comments |
 | :--: | ------- | ---- |------------------ |
-| 1 | Requirements | pip install -r requirements.txt | Install all necessary modules |
-| 2 | Matplotlib visualisation | Display domains inside proteins. Preferably output in a .HTML file | Plotly |
-| 3 | Need for a fully interactive domain-aware FlaGs | Build an application/dashboard | Plotly Dash |
-
+| 1 | Installing Requirements | pip install -r requirements.txt | Install all necessary modules |
+| 2 | Matplotlib visualisation | python3 ./image.py | Plotly |
+| 3 | Semi-interactive | python3 ./semi-interactive_html.py | Take a while to run |
+| 4 | Interactive app | python3 ./interactive_html.py | One of the modules (dash_bio) might install faulty |
 
 ## How to Use the Project
 1.	The matplotlib.py script bypasses some limitations the FlaGs1 visualization had. This script is already incorporated in the follow-up version, FlaGs2. 
