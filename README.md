@@ -2,11 +2,13 @@
 
 Complex programs can fail to deliver their results without an adequate visualization interface. FlaGs (Flanking Genes) is a bioinformatics tool that detects homologous gene clusters and outputs a graphical visualization along with a phylogenetic tree. Recent updates to the FlaGs algorithm has made this tool domain-aware, however it is lacking the visual interface to support such feature. 
 
-This project aims to:
-1.	improve the original plotting script to avoid some previous limitations of the program (using matplotlib, matplotlib.py), 
-2.	develop a semi-interactive, easily sharable FlaGs result suitable for a limited number of domains per protein (using plotly, semi-interactive_html.py), and
-3.	develop a fully interactive FlaGs application in order to provide complete and convenient access to all domain data (using Plotly Dash, interactive_dash.py).
+Project aims:
 
+| Aim  | Imporve | How | Library/Framework |
+| ---- | ------- | ---- |------------------ |
+| 1 | New visualisation code that does not crash the program when running it display-less | Rewrite the visualisation code | Matplotlib |
+| 2 | Accommodate graphical output for a domain-aware FlaGs | Display domains inside proteins. Preferably output in a .HTML file | Plotly |
+| 3 | Need for a fully interactive domain-aware FlaGs | Build an application/dashboard | Plotly Dash |
 
 
 ## Contents
