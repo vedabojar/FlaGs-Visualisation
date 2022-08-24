@@ -26,7 +26,7 @@ How to run
 | :--: | ------- | ---- |------------------ |
 | 1 | Installing Requirements | sudo pip install -r requirements.txt | Install all necessary modules |
 | 2 | Matplotlib visualisation | python3 ./image.py | Can be run without step 1 if matplotlib is already installed |
-| 3 | Semi-interactive | python3 ./semi-interactive_html.py | Takes a while to run |
+| 3 | Semi-interactive | python3 ./semi-interactive_html.py | HTML file opens in a werbrowser tab |
 | 4 | Interactive app | python3 ./interactive_html.py | App still not deplyed, open this link (http://127.0.0.1:8050/) to view the app |
 
 ## How to Use the Project
