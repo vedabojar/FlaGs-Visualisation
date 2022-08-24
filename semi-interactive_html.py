@@ -5,6 +5,7 @@
 # of which can be downloaded as .svg. The output file also offers some interactivity.
 
 
+import plotly
 import plotly.graph_objs as go
 from plotly.subplots import make_subplots
 import pandas as pd
