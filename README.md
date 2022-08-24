@@ -6,9 +6,9 @@ Project aims:
 
 | Aim  | Imporve | How | Library/Framework |
 | ---- | ------- | ---- |------------------ |
-| 1 | New visualisation code that does not crash the program when running it display-less | Rewrite the visualisation code | Matplotlib |
-| 2 | Accommodate graphical output for a domain-aware FlaGs | Display domains inside proteins. Preferably output in a .HTML file | Plotly |
-| 3 | Need for a fully interactive domain-aware FlaGs | Build an application/dashboard | Plotly Dash |
+| :1: | New visualisation code that does not crash the program when running it display-less | Rewrite the visualisation code | Matplotlib |
+| :2: | Accommodate graphical output for a domain-aware FlaGs | Display domains inside proteins. Preferably output in a .HTML file | Plotly |
+| :3: | Need for a fully interactive domain-aware FlaGs | Build an application/dashboard | Plotly Dash |
 
 
 ## Contents
