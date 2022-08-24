@@ -69,7 +69,7 @@ fig = make_subplots(shared_yaxes = True, shared_xaxes = True)
 data = pd.read_csv('./operon.tsv', sep='\t', header=None, skiprows=None)            
 df = pd.DataFrame(data)                                                                                
                                                                                                     
-y_axes = df[0].nunique()*40
+y_axes = df[0].nunique()*60
 x_axes = y_axes*5
 
 
