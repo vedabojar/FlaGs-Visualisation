@@ -21,7 +21,9 @@ Overview of repository files including the script and each files it requires in 
 
 Downloading the script with its corresponding file/s in a shared directory should be enough to run and display the results locally. Some dependencies, such as dash_bio might need to be downloaded in order to run the interactive_dash.py script. 
 
-The matplotlib.py will display the results using matplotlib viewing window once the code is run. The semi-interactive_html.py script will open a HTML server to display results. The interactive_dash.py script requires a server to run, running it locally requires opening the link pasted at the top of the script to open the results in an interactive dashboard. 
+1. The matplotlib.py will display the results using matplotlib viewing window once the code is run. 
+2. The semi-interactive_html.py script will open a HTML server to display results. 
+3. The interactive_dash.py script requires a server to run, running it locally requires opening a link (http://127.0.0.1:8050/) pasted at the top of the script to open the results in the interactive dashboard. 
 
 
 ## How to Use the Project
